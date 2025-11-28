@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Fitness Centar Titan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fafafa;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            color: #111;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .login-container .btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #ff6600;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-container .btn:hover {
+            background: #e65c00;
+        }
+
+        .login-container .links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-container .links a {
+            color: #ff6600;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Prijava u Fitness Centar Titan</h2>
+    <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Lozinka" required>
+        <button type="submit" class="btn">Prijavi se</button>
+    </form>
+    <div class="links">
+        <a href="#">Zaboravljena lozinka?</a> |
+        <a href="#">Registriraj se</a>
+    </div>
+</div>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Ovo je primjer, ovdje se dodaje stvarna logika autentikacije
+        if(email && password) {
+            alert(`Uspješna prijava!\nEmail: ${email}`);
+            loginForm.reset();
+        } else {
+            alert('Molimo unesite email i lozinku.');
+        }
+    });
+</script>
+
+</body>
+</html>
