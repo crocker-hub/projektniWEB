@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suplementi — Fitness Centar JUNGLE GYM</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+
+</head>
+<body>
+
+<!-- KOŠARICA POP-UP -->
+<div id="cartPopup" class="cart-popup" style="display:none;">
+    <div class="cart-inner">
+        <h2>Košarica</h2>
+        <div id="cartItems"></div>
+        <button id="closeCart" class="btn" style="background:#444;">Zatvori</button>
+    </div>
+</div>
+
+<!-- NAVIGACIJA -->
+<nav class="nav">
+    <div class="nav-logo">JUNGLE GYM</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="supp.html">Suplementi</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="lokacija.html">Lokacija</a></li>
+        <li><a href="" id="cartBtn">Košarica (<span id="cartCount">0</span>)</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="supp-header">
+    <h1>Sportski Suplementi</h1>
+    <p>Kvalitetni i provjereni suplementi za bolji napredak i zdravlje.</p>
+</header>
+
+<!-- SUPLEMENTI -->
+<section class="supp-section">
+    <h2>Naša ponuda</h2>
+
+    <div class="supp-cards">
+
+        <div class="supp-card">
+            <img src="whey.jpg" alt="Whey protein">
+            <h3>Whey Protein</h3>
+            <p>Premium protein za brži oporavak i izgradnju mišića.</p>
+            <p><strong>39.99€</strong></p>
+            <a href="#" class="btn supp-btn buy-btn" data-name="Whey Protein" data-price="39.99">Kupi</a>
+        </div>
+
+        <div class="supp-card">
+            <img src="creatine.jpg" alt="Kreatin monohidrat">
+            <h3>Kreatin Monohidrat</h3>
+            <p>Povećaj snagu, izdržljivost i performanse.</p>
+            <p><strong>19.99€</strong></p>
+            <a href="" class="btn supp-btn buy-btn" data-name="Kreatin Monohidrat" data-price="19.99">Kupi</a>
+        </div>
+
+        <div class="supp-card">
+            <img src="bcaa.jpg" alt="BCAA amino kiseline">
+            <h3>BCAA Amino Kiseline</h3>
+            <p>Podrži oporavak i smanji umor tijekom treninga.</p>
+            <p><strong>24.99€</strong></p>
+            <a href="#" class="btn supp-btn buy-btn" data-name="BCAA Amino Kiseline" data-price="24.99">Kupi</a>
+        </div>
+
+        <div class="supp-card">
+            <img src="preworkout.jpg" alt="Pre-workout">
+            <h3>Pre-Workout</h3>
+            <p>Eksplozivna energija i fokus za svaki trening.</p>
+            <p><strong>29.99€</strong></p>
+            <a href="#" class="btn supp-btn buy-btn" data-name="Pre-Workout" data-price="29.99">Kupi</a>
+        </div>
+
+        <div class="supp-card">
+            <img src="vitamins.jpg" alt="Multivitamin">
+            <h3>Multivitamin</h3>
+            <p>Esencijalni vitamini za zdravlje i imunitet.</p>
+            <p><strong>14.99€</strong></p>
+            <a href="#" class="btn supp-btn buy-btn" data-name="Multivitamin" data-price="14.99">Kupi</a>
+        </div>
+
+        <div class="supp-card">
+            <img src="omega3.jpg" alt="Omega 3">
+            <h3>Omega 3</h3>
+            <p>Bolja regeneracija, zdravlje srca i zglobova.</p>
+            <p><strong>12.99€</strong></p>
+            <a href="#" class="btn supp-btn buy-btn" data-name="Omega 3" data-price="12.99">Kupi</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>Fitness Centar JUNGLE GYM © 2025 — Sva prava pridržana</p>
+</footer>
+
+<!-- JS NA KRAJU -->
+<script src="cart.js"></script>
+
+</body>
+</html>

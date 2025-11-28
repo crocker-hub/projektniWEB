@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proizvod — JUNGLE GYM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-logo">JUNGLE GYM</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="supp.html">Suplementi</a></li>
+        <li><a href="#" id="cartBtn">Košarica (<span id="cartCount">0</span>)</a></li>
+    </ul>
+</nav>
+
+<section class="product-page">
+    <div class="product-left">
+        <img id="prodImg" src="" alt="">
+    </div>
+    <div class="product-right">
+        <h1 id="prodName"></h1>
+        <p id="prodDesc"></p>
+        <h2 id="prodPrice"></h2>
+        <button id="buyBtn" class="btn">Dodaj u košaricu</button>
+    </div>
+</section>
+
+<div id="cartPopup" class="cart-popup">
+    <div class="cart-inner">
+        <h2>Košarica</h2>
+        <div id="cartItems"></div>
+        <button id="closeCart" class="btn" style="background:#444;">Zatvori</button>
+    </div>
+</div>
+
+<script>
+let p = JSON.parse(localStorage.getItem("currentProduct"));
+
+document.getElementById("prodImg").src = p.img;
+document.getElementById("prodName").textContent = p.name;
+document.getElementById("prodDesc").textContent = p.desc;
+document.getElementById("prodPrice").textContent = p.price;
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function updateCartCount(){ document.getElementById("cartCount").textContent = cart.length; }
+updateCartCount();
+
+document.getElementById("buyBtn").addEventListener("click", () => {
+    cart.push(p);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert("Dodano u košaricu!");
+});
+
+// košarica popup
+const cartBtn = document.getElementById("cartBtn");
+const cartPopup = document.getElementById("cartPopup");
+const closeCart = document.getElementById("closeCart");
+
+cartBtn.addEventListener("click", () => {
+    const container = document.getElementById("cartItems");
+    container.innerHTML = cart.map(i => `
+        <div class="cart-item">
+            <img src="${i.img}" />
+            <p>${i.name}</p>
+            <strong>${i.price}</strong>
+        </div>
+    `).join("");
+    cartPopup.style.display = "flex";
+});
+
+closeCart.addEventListener("click", () => {
+    cartPopup.style.display = "none";
+});
+</script>
+
+</body>
+</html>
